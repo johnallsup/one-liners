@@ -1,0 +1,8 @@
+#!/bin/bash
+# pair to authon
+# this is to prevent accidents that can happen if we accidently type e.g.
+# cat .ssh/id_rsa.pub | ssh host 'cat > .ssh/authorized_keys'
+AUTHKEY_FILE=~/.ssh/authorized_keys
+echo "Auth key file $AUTHKEY_FILE"
+cat >> $AUTHKEY_FILE
+echo Added key to "$AUTHKEY_FILE"

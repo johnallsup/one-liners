@@ -1,0 +1,6 @@
+#!/bin/bash
+# pair to authkey
+if [ -z "$KEYFILE" ]; then KEYFILE="$HOME/.ssh/id_rsa.pub"; fi
+if [ -f "$KEYFILE" ]; then
+  cat "$KEYFILE" | ssh "$1" authkey
+fi
